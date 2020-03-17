@@ -1,0 +1,31 @@
+<div [hidden]="!authenticated" style="text-align:center">
+  <h1>
+    Welcome dd to Liker {{ title }}!!
+  </h1>
+  <button (click)="getOrder()" type="button" class="btn btn-primary">Get Order Info</button>
+  <p>order id :{{ order.id }}</p>
+  <p>order product id :{{ order.productId }}</p>
+  <button (click)="logout()" type="button" class="btn btn-primary">Logout</button>
+</div>
+
+<!-- no login in web, direct to auth service -->
+<!-- <div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+    <div [hidden]="authenticated">
+      <p>please login</p>
+      <form role="from" (submit)="login()">
+        <div class="from-group">
+          <label for="username">User Name:</label> <input type="text" class="form-control" id="username" name="username"
+            [(ngModel)]="credentials.username"/>
+        </div>
+        <div class="from-group">
+          <label for="password">Password:</label> <input type="text" class="form-control" id="password" name="password"
+            [(ngModel)]="credentials.password"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-lg-4"></div>
+</div> -->
