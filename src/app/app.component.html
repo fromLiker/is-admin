@@ -1,12 +1,61 @@
 <div [hidden]="!authenticated" style="text-align:center">
   <h1>
+    Welcome to {{ title }}!!
+  </h1>
+
+  <div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+      <!-- <button (click)="getOrder()" type="button" class="btn btn-primary">Get Order Info</button> -->
+  <!-- <p>order id :{{ order.id }}</p>
+  <p>order product id :{{ order.productId }}</p> -->
+  <form class="form-orderinfo" #loginForm="ngForm">
+    <div class="form-group">
+      <label for="inputOrderid" class="sr-only">OrderID</label>
+      <input type="orderid" class="form-control" name="orderid" [(ngModel)]="orderform.orderid" #username="ngModel" placeholder="Order ID" id="inputOrderid" class="form-control">
+    </div>
+    <button (click)="getOrder()" type="submit" class="btn btn-primary">Get Order Info</button>
+  </form>
+  </div>
+  <div class="col-lg-4"></div>
+  </div>
+<br>
+
+  <button (click)="logout()" type="button" class="btn btn-primary">Logout</button>
+<!--  -->
+  <div class="content" role="main">
+    <table datatable class="table"  style="border:1px solid #f3f3f3">
+      <thead>
+        <tr>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order ID</th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order Date</th>
+          <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Order Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cp of orders; let i = index">
+          <td>{{cp.orderid}}</td>
+          <td>{{cp.orderdate}}</td>
+          <td>{{cp.ordernum}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<!--  -->
+</div>
+
+<!-- 
+
+  <div [hidden]="!authenticated" style="text-align:center">
+  <h1>
     Welcome dd to Liker {{ title }}!!
   </h1>
   <button (click)="getOrder()" type="button" class="btn btn-primary">Get Order Info</button>
   <p>order id :{{ order.id }}</p>
   <p>order product id :{{ order.productId }}</p>
   <button (click)="logout()" type="button" class="btn btn-primary">Logout</button>
-</div>
+
+ -->
 
 <!-- no login in web, direct to auth service -->
 <!-- <div class="row">
@@ -29,3 +78,6 @@
   </div>
   <div class="col-lg-4"></div>
 </div> -->
+
+
+
